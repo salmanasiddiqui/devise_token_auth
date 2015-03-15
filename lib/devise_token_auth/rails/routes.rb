@@ -10,6 +10,7 @@ module ActionDispatch::Routing
       registrations_ctrl     = opts[:controllers][:registrations] || "devise_token_auth/registrations"
       passwords_ctrl         = opts[:controllers][:passwords] || "devise_token_auth/passwords"
       confirmations_ctrl     = opts[:controllers][:confirmations] || "devise_token_auth/confirmations"
+      invitations_ctrl       = opts[:controllers][:invitations] || "devise/invitations"
       token_validations_ctrl = opts[:controllers][:token_validations] || "devise_token_auth/token_validations"
       omniauth_ctrl          = opts[:controllers][:omniauth_callbacks] || "devise_token_auth/omniauth_callbacks"
       unlocks_ctrl           = opts[:controllers][:unlocks] || "devise_token_auth/unlocks"
@@ -18,7 +19,8 @@ module ActionDispatch::Routing
       controllers = {:sessions           => sessions_ctrl,
                      :registrations      => registrations_ctrl,
                      :passwords          => passwords_ctrl,
-                     :confirmations      => confirmations_ctrl}
+                     :confirmations      => confirmations_ctrl,
+                     :invitations        => invitations_ctrl}
 
       controllers[:unlocks] = unlocks_ctrl if unlocks_ctrl
 
